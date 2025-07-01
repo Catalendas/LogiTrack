@@ -1,0 +1,17 @@
+
+services:
+  postges:
+    image: bitnami/postgresql
+    container_name: logitrack_db
+    restart: always
+    environment:
+      - POSTGRESQL_DATABASE=logitrack
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/bitnami/postgresql
+
+volumes:
+  pgdata:
